@@ -1,0 +1,49 @@
+
+/*lynnb Custom Css */
+
+
+.alert {
+  margin-top: 30px;
+}
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    z-index: 2;
+    color: inherit;
+    background-color: inherit;
+    border-color: inherit;
+}
+.list-group-item.active .list-group-item-text, .list-group-item.active:focus .list-group-item-text, .list-group-item.active:hover .list-group-item-text {
+    color: inherit;
+}
+
+.navbar-inverse {
+    background-color: #ddd;
+    border-color: #ddd;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #337AB7;
+}
+
+.navbar-brand {
+        margin-left: -50;
+    }
+
+.navbar-header {
+        margin-left: 50;
+    }
+
+.navbar-fixed-top .nav {
+    padding: 15px 0;
+}
+
+.navbar-fixed-top .navbar-brand {
+    padding: 0 15px;
+}
+
+@media(min-width:768px) {
+
+    .navbar-fixed-top .navbar-brand {
+        padding: 15px 0;
+    }
+}

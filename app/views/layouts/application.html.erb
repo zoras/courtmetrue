@@ -2,9 +2,10 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Courtmetrue" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Courtmetrue" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "Court Me True" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Court Me True" %>">
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
@@ -16,5 +17,8 @@
        <%= render 'layouts/messages' %>
        <%= yield %>
     </main>
+    <footer class="text-center">
+      <%= render 'layouts/footer' %>
+    </footer>
   </body>
 </html>
