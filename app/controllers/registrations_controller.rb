@@ -10,7 +10,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_sign_in_path_for(resource)
-    page_path('about')
+    root_path
   end
 
 end
