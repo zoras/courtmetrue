@@ -16,6 +16,7 @@ end
 gem 'bootstrap-sass'
 gem 'country_select'
 gem 'devise'
+gem 'enum_help'
 gem 'high_voltage'
 gem 'simple_form'
 gem 'upmin-admin'

@@ -11,12 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151025152623) do
+ActiveRecord::Schema.define(version: 20151026061018) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
+    t.date     "dob"
+    t.string   "country"
+    t.string   "state"
+    t.string   "city"
+    t.string   "gender"
+    t.string   "religion"
+    t.string   "ethnicity"
+    t.string   "language"
+    t.string   "occupation"
+    t.string   "income"
+    t.string   "household"
+    t.integer  "height"
+    t.integer  "weight"
+    t.string   "bodytype"
+    t.string   "smoker"
+    t.string   "drinker"
+    t.string   "status"
+    t.integer  "children"
+    t.boolean  "wantkids"
+    t.string   "selfbio"
+    t.string   "ideal"
+    t.boolean  "tandc"
   end
 
   create_table "users", force: :cascade do |t|

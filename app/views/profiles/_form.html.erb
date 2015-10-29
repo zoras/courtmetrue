@@ -1,11 +1,51 @@
-<%= simple_form_for(@profile) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :age %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+
+
+<div class="panel panel-default">
+<div class="panel-heading"><h3>Create a profile</h3></div>
+<div class="panel-body">
+<div class="form">
+  <%= simple_form_for(@profile) do |form| %>
+    <%= form.error_notification %>
+
+    <div class="form-inputs">
+      <%= form.input :age %>
+    </div>
+
+    <%= form.input :name, autofocus: true %>
+    <%= form.input :dob, label: 'Date of Birth' , start_year: Date.today.year - 90,
+                                end_year: Date.today.year - 12, discard_day: true,
+                                order: [:month, :year] %>
+    <%= form.input :country %>
+    <%= form.input :state, label: 'State/Province' %>
+    <%= form.input :city %>
+    <%= form.input :gender, collection: [:male, :female],  as: :radio_buttons %>
+    <%= form.input :status, label: 'Marital status' , collection: [:Single, :Divorce, :Widow], as: :radio_buttons %>
+    <%= form.input :religion, collection: [:Protestant, :Hindu, :Bhudist, :Catholic, :Islam, :Other] %>
+    <%= form.input :language, collection: [:English, :Tagalog, :Spanish, :Chinese, :German, :French] %>
+    <%= form.input :ethnicity, collection: [:Asian, :Caucasian, :Hispanic, :Arabs, :Persians, :Other] %>
+    <%= form.input :occupation %>
+    <%= form.input :income, label: 'Annual Income' H = Hash["a" => 100, "b" => 200]puts "#{H['100']}" puts "#{H['200']}" %>
+    <%= form.input :household, label: 'Living Situation' , collection: [:Alone, :Housemates, :family] %>
+    <%= form.input :height %>
+    <%= form.input :weight %>
+    <%= form.input :bodytype, label: 'Body Type' , collection: [:Slim, :Petite, :Athletic, :Medium, :Overweight] %>
+    <%= form.input :smoker, label: 'Do you smoke?', collection: [:Yes, :No] %>
+    <%= form.input :drinker, label: 'Do you drink?', collection: [:Yes, :No, :Sometimes] %>
+    <%= form.input :children, label: 'Do you have children?', collection: [:Yes, :No] %>
+    <%= form.input :wantkids, label: 'Do you want to have a children?', collection: [:Yes, :No, :Maybe] %>
+    <%= form.input :selfbio, label: 'Tell something about your self', as: :text %>
+    <%= form.input :ideal, label: 'Describe you ideal partner', as: :text %>
+    <%= form.input :tandc, label: 'Accept terms and conditions?',
+                              as: :boolean,
+                              checked_value: true,
+                              unchecked_value: false %>
+
+    <div class="form-actions">
+      <%= form.button :submit %>
+    </div>
+  <% end %>
+</div>
+</div>
+</div>
