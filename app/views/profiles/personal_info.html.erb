@@ -20,7 +20,12 @@
 	                <%= f.input :occupation %>
 	                <%= f.input :income, label: 'Annual Income' %>
 	                <%= f.input :household, label: 'Living Situation' , collection: [:Alone, :Housemates, :family] %>
-	                <button type="submit" href="#profile" name="home_form" class="btn-submit btn btn-success btn-outline-rounded green">
+
+	                <%= link_to previous_wizard_path, class: "btn-submit btn btn-success btn-outline-rounded green" do %>
+		                <span style="margin-left:10px;" class="glyphicon glyphicon-backward"></span> Previous
+	                <% end %>
+
+	                <button type="submit" href="#profile" name="home_form" class="btn-submit btn btn-success btn-outline-rounded green btnNext">
 	                  Next <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span>
 	                </button>
 	              </div>

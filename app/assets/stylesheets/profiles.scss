@@ -8,7 +8,7 @@ $color_lightning_yellow_approx: #febe29;
 $color_azure_approx: #3e5e9a;
 $color_bittersweet_approx: #f1685e;
 $color_mountain_mist_approx: #999;
-$color_fern_approx: #5cb85c;
+$color_fern_approx: #337AB7;
 
 //fonts
 $font_0: Roboto Condensed;
@@ -27,6 +27,9 @@ $url_0: url(http://subtlepatterns.com/patterns/geometry2.png);
   border-bottom-color: transparent;
 }
 .userProfile {
+  .radio_buttons.control-label {
+    padding-left: 0;
+  }
   .board {
     width: 75%;
     margin: 60px auto;
@@ -43,6 +46,9 @@ $url_0: url(http://subtlepatterns.com/patterns/geometry2.png);
       background: $alabaster $url_0;
       background-size: 30%;
     }
+  }
+  .btnNext {
+    float: right;
   }
   .finalizeProfile {
     text-align: center;
@@ -174,6 +180,9 @@ $url_0: url(http://subtlepatterns.com/patterns/geometry2.png);
       position: absolute;
       left: 35%;
     }
+    .liner {
+      top: 43%;
+    }
   }
   p.narrow {
     width: 60%;
@@ -185,7 +194,6 @@ $url_0: url(http://subtlepatterns.com/patterns/geometry2.png);
       width: 70px;
       height: 70px;
       margin: 20px auto;
-      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
       border-radius: 100%;
       padding: 0;
       &:hover {
@@ -248,5 +256,36 @@ $url_0: url(http://subtlepatterns.com/patterns/geometry2.png);
   .btn.green {
     background-color: $color_fern_approx;
     color: $white;
+  }
+  @media(max-width: 585px) {
+    span.round-tabs {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      display: inline-block;
+    }
+    .finalizeProfile {
+      .glyphicon-ok {
+        font-size: 40px;
+      }
+    }
+    .tab-content .head {
+      font-size: 15px;
+    }
+    .radio_buttons {
+      .radio-inline {
+        display: block;
+        margin-left: 10px;
+      }
+    }
+    .nav-tabs > li {
+      a {
+        width: 50px;
+        background-color: $alabaster;
+        &:hover, &:focus {
+          background-color: $alabaster;
+        }
+      }
+    }
   }
 }
