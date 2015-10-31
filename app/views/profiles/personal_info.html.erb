@@ -1,0 +1,35 @@
+<div class="userProfile">
+  <section style="background:#efefe9;">
+    <div class="container">
+      <div class="row">
+        <div class="board">
+          <%= render "profile_board_inner" %>
+	      	<div class="tab-content">
+	      	  <%= simple_form_for @profile, url: wizard_path, wrapper: :vertical_form,
+	                                                wrapper_mappings: {
+	                                                  check_boxes: :horizontal_radio_and_checkboxes,
+	                                                  radio_buttons: :horizontal_radio_and_checkboxes,
+	                                                  file: :horizontal_file_input,
+	                                                  datetime: :multi_select
+	                                                } do |f| %>
+	          	<fieldset>
+	              <div class="tab-pane fade in active" id="home">
+	                <%= f.input :religion, collection: [:Protestant, :Hindu, :Bhudist, :Catholic, :Islam, :Other] %>
+	                <%= f.input :language, collection: [:English, :Tagalog, :Spanish, :Chinese, :German, :French] %>
+	                <%= f.input :ethnicity, collection: [:Asian, :Caucasian, :Hispanic, :Arabs, :Persians, :Other] %>
+	                <%= f.input :occupation %>
+	                <%= f.input :income, label: 'Annual Income' %>
+	                <%= f.input :household, label: 'Living Situation' , collection: [:Alone, :Housemates, :family] %>
+	                <button type="submit" href="#profile" name="home_form" class="btn-submit btn btn-success btn-outline-rounded green">
+	                  Next <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span>
+	                </button>
+	              </div>
+	              <div class="clearfix"></div>
+	            </fieldset>
+	          <% end %>
+	        </div>
+	      </div>
+		  </div>
+	  </div>
+	</section>
+</div>

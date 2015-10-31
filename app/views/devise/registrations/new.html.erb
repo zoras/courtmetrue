@@ -22,28 +22,3 @@
      <%= f.submit 'Join', :class => 'button right' %>
   <% end %>
 </div>
-<div class="panel panel-default">
-  <div class="panel-heading"><h3>Create a profile</h3></div>
-  <div class="panel-body">
-    <div class="form">
-      <%= simple_form_for :profile, url: contact_path do |form| %>
-        <%= form.input :name, autofocus: true %>
-        <%= form.input :email %>
-        <%= form.input :password, placeholder: 'Password' %>
-        <%= form.input :date_of_birth, as: :date, start_year: Date.today.year - 90,
-                                    end_year: Date.today.year - 12, discard_day: true,
-                                    order: [:month, :year] %>
-        <%= form.input :country %>
-        <%= form.input :province, label: 'State/Province' %>
-        <%= form.input :ciy %>
-        <%= form.input :gender, collection: [:male, :female],  as: :radio_buttons %>
-        <%= form.input :accepts,
-                        label: 'Accept terms and conditions?',
-                        as: :boolean,
-                        checked_value: true,
-                        unchecked_value: false %>
-        <%= form.button :submit, 'Continue', class: 'submit' %>
-      <% end %>
-    </div>
-  </div>
-</div>

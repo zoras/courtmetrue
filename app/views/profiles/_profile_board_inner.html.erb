@@ -1,0 +1,41 @@
+<div class="board-inner">
+  <ul class="nav nav-tabs" id="myTab">
+    <div class="liner"></div>
+     <li class="<%= @current_step == 'start_profile' ? 'active' : '' %>">
+      <a href="<%= profile_path(:start_profile) %>" title="Fill profile">
+        <span class="round-tabs four">
+          <i class="glyphicon glyphicon-play-circle"></i>
+        </span>
+      </a>
+    </li>
+    <li class="<%= @current_step == 'basic_info' ? 'active' : '' %>">
+      <a href="<%= profile_path(:basic_info) %>" title="Basic Information">
+      	<span class="round-tabs one">
+      		<i class="glyphicon glyphicon-info-sign"></i>
+				</span>
+       </a>
+    </li>
+    <li class="<%= @current_step == 'personal_info' ? 'active' : '' %>">
+      <a href="<%= profile_path(:personal_info) %>" title="Personal Information">
+      	<span class="round-tabs two">
+        	<i class="glyphicon glyphicon-user"></i>
+        </span>
+      </a>
+    </li>
+    <li class="<%= @current_step == 'aditional_info' ? 'active' : '' %>">
+      <a href="<%= profile_path(:aditional_info) %>" title="Additional Information">
+      	<span class="round-tabs three">
+  				<i class="glyphicon glyphicon-plus"></i>
+					</span>
+				</a>
+    </li>
+    
+    <li class="<%= @current_step == 'finalize_profile' ? 'active' : '' %>">
+      <a href="<%= profile_path(:finalize_profile) %>" title="Profile Created">
+      	<span class="round-tabs five">
+      		<i class="glyphicon glyphicon-ok"></i>
+   			</span>
+   		</a>
+    </li>
+  </ul>
+</div>

@@ -1,3 +1,252 @@
-// Place all the styles related to the Profiles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//colors
+$white: #fff;
+$alabaster: #fafafa;
+$color_alto_approx: #ddd;
+$color_fuscous_gray_approx: #555555;
+$color_forest_green_approx: rgb(34, 194, 34);
+$color_lightning_yellow_approx: #febe29;
+$color_azure_approx: #3e5e9a;
+$color_bittersweet_approx: #f1685e;
+$color_mountain_mist_approx: #999;
+$color_fern_approx: #5cb85c;
+
+//fonts
+$font_0: Roboto Condensed;
+$font_1: sans-serif;
+
+//urls
+$url_0: url(http://subtlepatterns.com/patterns/geometry2.png);
+
+//@extend-elements
+//original selectors
+//.nav-tabs >li.active >a, .nav-tabs >li.active >a:hover, .nav-tabs >li.active >a:focus
+%extend_1 {
+  color: $color_fuscous_gray_approx;
+  cursor: default;
+  border: 0;
+  border-bottom-color: transparent;
+}
+.userProfile {
+  .board {
+    width: 75%;
+    margin: 60px auto;
+    height: 750px;
+    background: $white;
+    .nav-tabs {
+      position: relative;
+      margin: 40px auto;
+      margin-bottom: 0;
+      //Instead of the line below you could use @include box-sizing($bs)
+      box-sizing: border-box;
+    }
+    > div.board-inner {
+      background: $alabaster $url_0;
+      background-size: 30%;
+    }
+  }
+  .finalizeProfile {
+    text-align: center;
+    margin-top: 23%;
+
+    .glyphicon-ok {
+      font-size: 70px;
+      color: green;
+      padding: 15px;
+      background: $white;
+      border-radius: 50%;
+      border: 1px solid green;
+    }
+    .glyphicon-play-circle {
+      font-size: 70px;
+      color: $color_mountain_mist_approx;
+      padding: 15px;
+      background: $white;
+    }
+  }
+  .tab-content {
+    padding: 0 15px;
+  }
+  .radio-inline, .checkbox-inline {
+    vertical-align: baseline;
+  }
+  .radio_buttons {
+    margin-top: 1.5px;
+  }
+  .liner {
+    height: 2px;
+    background: $color_alto_approx;
+    position: absolute;
+    width: 80%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    z-index: 1;
+  }
+  li {
+    &.active {
+      &:after {
+        content: " ";
+        position: absolute;
+        left: 45%;
+        opacity: 1;
+        margin: 0 auto;
+        bottom: 0;
+        border: 10px solid transparent;
+        border-bottom-color: $color_alto_approx;
+      }
+      span.round-tabs {
+        &.one {
+          background: $white !important;
+          border: 2px solid $color_alto_approx;
+          color: $color_forest_green_approx;
+        }
+        &.two {
+          background: $white !important;
+          border: 2px solid $color_alto_approx;
+          color: $color_lightning_yellow_approx;
+        }
+        &.three {
+          background: $white !important;
+          border: 2px solid $color_alto_approx;
+          color: $color_azure_approx;
+        }
+        &.four {
+          background: $white !important;
+          border: 2px solid $color_alto_approx;
+          color: $color_bittersweet_approx;
+        }
+        &.five {
+          background: $white !important;
+          border: 2px solid $color_alto_approx;
+          color: $color_mountain_mist_approx;
+        }
+      }
+    }
+    &:after {
+      content: " ";
+      position: absolute;
+      left: 45%;
+      opacity: 0;
+      margin: 0 auto;
+      bottom: 0;
+      border: 5px solid transparent;
+      border-bottom-color: $color_alto_approx;
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: 0.1s ease-in-out;
+    }
+  }
+  .tab-pane {
+    position: relative;
+    padding-top: 50px;
+  }
+  .btn-outline-rounded {
+    padding: 10px 40px;
+    margin: 20px 0;
+    border: 2px solid transparent;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 25px;
+  }
+  @media(max-width: 585px) {
+    .board {
+      width: 90%;
+      height: auto !important;
+    }
+    .btn-outline-rounded {
+      padding: 12px 20px;
+    }
+    span.round-tabs {
+      font-size: 16px;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+    }
+    .tab-content .head {
+      font-size: 20px;
+    }
+    .nav-tabs > li a {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+    }
+    li.active:after {
+      content: " ";
+      position: absolute;
+      left: 35%;
+    }
+  }
+  p.narrow {
+    width: 60%;
+    margin: 10px auto;
+  }
+  .nav-tabs > li {
+    width: 20%;
+    a {
+      width: 70px;
+      height: 70px;
+      margin: 20px auto;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 100%;
+      padding: 0;
+      &:hover {
+        background: transparent;
+      }
+    }
+    &.active > a {
+      @extend %extend_1;
+      &:hover {
+        @extend %extend_1;
+      }
+      &:focus {
+        @extend %extend_1;
+      }
+      span.round-tabs {
+        background: $alabaster;
+      }
+    }
+  }
+  span.round-tabs {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    display: inline-block;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 100px;
+    background: $white;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 25px;
+    &.one {
+      color: $color_forest_green_approx;
+      border: 2px solid $color_forest_green_approx;
+    }
+    &.two {
+      color: $color_lightning_yellow_approx;
+      border: 2px solid $color_lightning_yellow_approx;
+    }
+    &.three {
+      color: $color_azure_approx;
+      border: 2px solid $color_azure_approx;
+    }
+    &.four {
+      color: $color_bittersweet_approx;
+      border: 2px solid $color_bittersweet_approx;
+    }
+    &.five {
+      color: $color_mountain_mist_approx;
+      border: 2px solid $color_mountain_mist_approx;
+    }
+  }
+  .tab-content .head {
+    font-family: $font_0, $font_1;
+    font-size: 25px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+  }
+  .btn.green {
+    background-color: $color_fern_approx;
+    color: $white;
+  }
+}

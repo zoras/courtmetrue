@@ -1,3 +1,16 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  $('a[title]').tooltip()
+  $('.userProfile .btn-submit').on 'click', (e) ->
+    formname = $(this).attr('name')
+    tabname = $(this).attr('href')
+    if $('#' + formname)[0].checkValidity()
+      e.preventDefault()
+      $('ul.nav li a[href="' + tabname + '"]').parent().removeClass 'disabled'
+      $('ul.nav li a[href="' + tabname + '"]').trigger 'click'
+    return
+  $('ul.nav li').on 'click', (e) ->
+    if $(this).hasClass('disabled')
+      e.preventDefault()
+      return false
+    return
+  return

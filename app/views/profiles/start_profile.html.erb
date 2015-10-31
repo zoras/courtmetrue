@@ -1,0 +1,19 @@
+<div class="userProfile">
+  <section style="background:#efefe9;">
+    <div class="container">
+      <div class="row">
+        <div class="board">
+          <%= render "profile_board_inner" %>
+          <div class="tab-content">
+            <%= link_to next_wizard_path do %>
+              <div class="finalizeProfile">
+                <i class="glyphicon glyphicon-play-circle"></i>
+              </div>
+            <% end %>
+            <h3 class="head text-center">Start filling your profile</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

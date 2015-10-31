@@ -1,0 +1,43 @@
+<div class="userProfile">
+  <section style="background:#efefe9;">
+    <div class="container">
+      <div class="row">
+        <div class="board">
+          <%= render "profile_board_inner" %>
+          <div class="tab-content">
+            <%= simple_form_for @profile, url: wizard_path, wrapper: :vertical_form,
+                                                  wrapper_mappings: {
+                                                    check_boxes: :horizontal_radio_and_checkboxes,
+                                                    radio_buttons: :horizontal_radio_and_checkboxes,
+                                                    file: :horizontal_file_input,
+                                                    datetime: :multi_select
+                                                  } do |f| %>
+              <fieldset>
+                <div class="tab-pane fade in active" id="home">
+                   <%= f.input :height %>
+                   <%= f.input :weight %>
+                   <%= f.input :bodytype, label: 'Body Type' , collection: [:Slim, :Petite, :Athletic, :Medium, :Overweight] %>
+                   <%= f.input :smoker, label: 'Do you smoke?', collection: [:Yes, :No] %>
+                   <%= f.input :drinker, label: 'Do you drink?', collection: [:Yes, :No, :Sometimes] %>
+                   <%= f.input :children, label: 'Do you have children?', collection: [:Yes, :No] %>
+                   <%= f.input :wantkids, label: 'Do you want to have a children?', collection: [:Yes, :No, :Maybe] %>
+                   <%= f.input :selfbio, label: 'Tell something about your self', as: :text %>
+                   <%= f.input :ideal, label: 'Describe you ideal partner', as: :text %>
+                   <%= f.input :tandc, label: 'Accept terms and conditions?',
+                                       as: :boolean,
+                                       checked_value: true,
+                                       unchecked_value: false
+                   %>
+                  <button type="submit" href="#profile" name="home_form" class="btn-submit btn btn-success btn-outline-rounded green">
+                    Finish <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span>
+                  </button>
+                </div>
+                <div class="clearfix"></div>
+              </fieldset>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
