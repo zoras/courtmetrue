@@ -18,7 +18,7 @@
                    <%= f.input :weight %>
                    <%= f.input :bodytype, label: 'Body Type' , collection: [:Slim, :Petite, :Athletic, :Medium, :Overweight] %>
                    <%= f.input :smoker, label: 'Do you smoke?', collection: [:Yes, :No] %>
-                   <%= f.input :drinker, label: 'Do you drink?', collection: [:Yes, :No, :Sometimes] %>
+                   <%= f.input :drinker, label: 'Do you drink?', collection: [:"Not At All", :"Occasional Drinker", :"Heavy Drinker"] %>
                    <%= f.input :children, label: 'Do you have children?', collection: [:Yes, :No] %>
                    <%= f.input :wantkids, label: 'Do you want to have a children?', collection: [:Yes, :No, :Maybe] %>
                    <%= f.input :selfbio, label: 'Tell something about your self', as: :text %>
