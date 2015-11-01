@@ -35,6 +35,8 @@
 	                            as: :radio_buttons, 
 	                            item_wrapper_class: 'radio-inline' %>
 	                <%= f.input :status, label: 'Marital status' , collection: [:Single, :Divorce, :Widow], as: :radio_buttons, :item_wrapper_class => 'radio-inline' %>
+	                <%= f.input :religion, collection: [:Protestant, :Hindu, :Bhudist, :Catholic, :Islam, :Other] %>
+	                <%= f.input :language, collection: [:English, :Tagalog, :Spanish, :Chinese, :German, :French] %>
 	                <button type="submit" href="#profile" name="home_form" class="btn-submit btn btn-success btn-outline-rounded green btnNext">
 	                	Next <span class="glyphicon glyphicon-send"></span>
 	                </button>

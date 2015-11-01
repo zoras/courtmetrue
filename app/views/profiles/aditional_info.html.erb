@@ -17,11 +17,12 @@
                   <% if @profile.male? %>
                     <%= f.input :expectations, label: 'Tell us your expectations' %>
                   <% else %>
+                    <label class="select optional control-label" for="profile_smoker">
+                      Courtship Preference
+                    </label>
+                    <br/>
+                    <%= collection_check_boxes(:profile, :courtship_preference_ids, CourtshipPreference.all, :id, :name) %>
                   <% end %>
-                  <%= f.input :smoker, label: 'Do you smoke?', collection: [:Yes, :No] %>
-                  <%= f.input :drinker, label: 'Do you drink?', collection: [:"Not At All", :"Occasional Drinker", :"Heavy Drinker"] %>
-                  <%= f.input :children, label: 'Do you have children?', collection: [:Yes, :No] %>
-                  <%= f.input :wantkids, label: 'Do you want to have a children?', collection: [:Yes, :No, :Maybe] %>
                   <%= f.input :selfbio, label: 'Tell something about your self', as: :text %>
                   <%= f.input :ideal, label: 'Describe you ideal partner', as: :text %>
                   <%= f.input :tandc, label: 'Accept terms and conditions?',

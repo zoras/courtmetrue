@@ -6,11 +6,13 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   def show
+    @current_step = params[:id]
+
     unless @profile
       @profile = @user.build_profile
       @profile.save
     end
-    @current_step = params[:id]
+
     render_wizard
   end
   
@@ -33,6 +35,6 @@ class ProfilesController < ApplicationController
                                       :religion, :language, :ethnicity, :occupation, :income, :household,
                                       :height, :weight, :bodytype, :smoker, :drinker, :children, :wantkids,
                                       :selfbio, :ideal, :tandc,
-                                      :gender, :status)
+                                      :gender, :status, courtship_preference_ids: [])
     end
 end

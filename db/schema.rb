@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151101025953) do
+ActiveRecord::Schema.define(version: 20151101095312) do
+
+  create_table "courtship_preferences", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "profile_courtship_preferences", force: :cascade do |t|
+    t.integer  "profile_id"
+    t.integer  "courtship_preference_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "profile_courtship_preferences", ["courtship_preference_id"], name: "index_profile_courtship_preferences_on_courtship_preference_id"
+  add_index "profile_courtship_preferences", ["profile_id"], name: "index_profile_courtship_preferences_on_profile_id"
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "age"

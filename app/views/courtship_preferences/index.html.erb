@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Courtship Preferences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courtship_preferences.each do |courtship_preference| %>
+      <tr>
+        <td><%= courtship_preference.name %></td>
+        <td><%= link_to 'Show', courtship_preference %></td>
+        <td><%= link_to 'Edit', edit_courtship_preference_path(courtship_preference) %></td>
+        <td><%= link_to 'Destroy', courtship_preference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Courtship preference', new_courtship_preference_path %>

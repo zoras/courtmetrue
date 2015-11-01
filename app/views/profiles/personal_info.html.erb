@@ -14,8 +14,6 @@
 	                                                } do |f| %>
 	          	<fieldset>
 	              <div class="tab-pane fade in active" id="home">
-	                <%= f.input :religion, collection: [:Protestant, :Hindu, :Bhudist, :Catholic, :Islam, :Other] %>
-	                <%= f.input :language, collection: [:English, :Tagalog, :Spanish, :Chinese, :German, :French] %>
 	                <%= f.input :ethnicity, collection: [:Asian, :Caucasian, :Hispanic, :Arabs, :Persians, :Other] %>
 	                <%= f.input :occupation %>
 	                <%= f.input :income, label: 'Annual Income' %>
@@ -23,6 +21,10 @@
 	                <%= f.input :height %>
 	                <%= f.input :weight %>
 	                <%= f.input :bodytype, label: 'Body Type' , collection: [:Slim, :Petite, :Athletic, :Medium, :Overweight] %>
+	                <%= f.input :smoker, label: 'Do you smoke?', collection: [:Yes, :No] %>
+	                <%= f.input :drinker, label: 'Do you drink?', collection: [:"Not At All", :"Occasional Drinker", :"Heavy Drinker"] %>
+	                <%= f.input :children, label: 'Do you have children?', collection: [:Yes, :No] %>
+	                <%= f.input :wantkids, label: 'Do you want to have a children?', collection: [:Yes, :No, :Maybe] %>
 
 	                <%= link_to previous_wizard_path, class: "btn-submit btn btn-success btn-outline-rounded green" do %>
 		                <span style="margin-left:10px;" class="glyphicon glyphicon-backward"></span> Previous
