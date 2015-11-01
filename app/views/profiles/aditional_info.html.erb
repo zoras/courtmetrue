@@ -14,16 +14,17 @@
                                                   } do |f| %>
               <fieldset>
                 <div class="tab-pane fade in active" id="home">
-                   <%= f.input :height %>
-                   <%= f.input :weight %>
-                   <%= f.input :bodytype, label: 'Body Type' , collection: [:Slim, :Petite, :Athletic, :Medium, :Overweight] %>
-                   <%= f.input :smoker, label: 'Do you smoke?', collection: [:Yes, :No] %>
-                   <%= f.input :drinker, label: 'Do you drink?', collection: [:"Not At All", :"Occasional Drinker", :"Heavy Drinker"] %>
-                   <%= f.input :children, label: 'Do you have children?', collection: [:Yes, :No] %>
-                   <%= f.input :wantkids, label: 'Do you want to have a children?', collection: [:Yes, :No, :Maybe] %>
-                   <%= f.input :selfbio, label: 'Tell something about your self', as: :text %>
-                   <%= f.input :ideal, label: 'Describe you ideal partner', as: :text %>
-                   <%= f.input :tandc, label: 'Accept terms and conditions?',
+                  <% if @profile.male? %>
+                    <%= f.input :expectations, label: 'Tell us your expectations' %>
+                  <% else %>
+                  <% end %>
+                  <%= f.input :smoker, label: 'Do you smoke?', collection: [:Yes, :No] %>
+                  <%= f.input :drinker, label: 'Do you drink?', collection: [:"Not At All", :"Occasional Drinker", :"Heavy Drinker"] %>
+                  <%= f.input :children, label: 'Do you have children?', collection: [:Yes, :No] %>
+                  <%= f.input :wantkids, label: 'Do you want to have a children?', collection: [:Yes, :No, :Maybe] %>
+                  <%= f.input :selfbio, label: 'Tell something about your self', as: :text %>
+                  <%= f.input :ideal, label: 'Describe you ideal partner', as: :text %>
+                  <%= f.input :tandc, label: 'Accept terms and conditions?',
                                        as: :boolean,
                                        checked_value: true,
                                        unchecked_value: false

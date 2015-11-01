@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151030174701) do
+ActiveRecord::Schema.define(version: 20151101025953) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "age"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "name"
     t.date     "dob"
     t.string   "country"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20151030174701) do
     t.string   "ideal"
     t.boolean  "tandc"
     t.integer  "user_id"
+    t.text     "expectations"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
