@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102103359) do
+ActiveRecord::Schema.define(version: 20151105174018) do
 
   create_table "courtship_preferences", force: :cascade do |t|
     t.string   "name"
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20151102103359) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "age"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.string   "name"
     t.date     "dob"
     t.string   "country"
@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 20151102103359) do
     t.string   "occupation"
     t.string   "income"
     t.string   "household"
-    t.integer  "height"
-    t.integer  "weight"
+    t.string   "height"
+    t.string   "weight"
     t.string   "bodytype"
     t.string   "smoker"
     t.string   "drinker"
@@ -58,6 +58,11 @@ ActiveRecord::Schema.define(version: 20151102103359) do
     t.boolean  "tandc"
     t.integer  "user_id"
     t.text     "expectations"
+    t.string   "graduate_degree"
+    t.string   "bachelors_degree"
+    t.string   "vocational"
+    t.string   "high_school"
+    t.string   "profile_heading"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"

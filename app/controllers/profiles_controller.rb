@@ -1,9 +1,11 @@
 class ProfilesController < ApplicationController
   include Wicked::Wizard
-  steps :start_profile, :basic_info, :personal_info, :aditional_info, :finalize_profile
+  steps :basic_info, :personal_info, :aditional_info, :finalize_profile
 
   before_action :get_user
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
+
+  
 
   def show
     @current_step = params[:id]
@@ -35,6 +37,6 @@ class ProfilesController < ApplicationController
                                       :religion, :language, :ethnicity, :occupation, :income, :household,
                                       :height, :weight, :bodytype, :smoker, :drinker, :children, :wantkids,
                                       :selfbio, :ideal, :tandc,
-                                      :gender, :status, courtship_preference_ids: [])
+                                      :gender, :status, :graduate_degree,:bachelors_degree,:vocational,:high_school,:profile_heading,courtship_preference_ids: [])
     end
 end
