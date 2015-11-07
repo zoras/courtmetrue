@@ -87,6 +87,10 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    dragonfly (1.0.12)
+      addressable (~> 2.3)
+      multi_json (~> 1.0)
+      rack (>= 1.3.0)
     enum_help (0.0.14)
     erubis (2.7.0)
     execjs (2.6.0)
@@ -262,6 +266,7 @@ DEPENDENCIES
   country_select
   database_cleaner
   devise
+  dragonfly
   enum_help
   factory_girl_rails
   faker
