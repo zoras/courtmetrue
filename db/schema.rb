@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105174018) do
+ActiveRecord::Schema.define(version: 20151107144823) do
 
   create_table "courtship_preferences", force: :cascade do |t|
     t.string   "name"
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 20151105174018) do
     t.string   "smoker"
     t.string   "drinker"
     t.string   "status"
-    t.integer  "children"
-    t.boolean  "wantkids"
+    t.string   "children"
+    t.string   "wantkids"
     t.string   "selfbio"
     t.string   "ideal"
     t.boolean  "tandc"
