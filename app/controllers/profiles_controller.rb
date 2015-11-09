@@ -14,7 +14,17 @@ class ProfilesController < ApplicationController
       @profile = @user.build_profile
       @profile.save
     end
-
+    if @current_step == "personal_info"
+      if !@profile.finish_basic_info?
+        redirect_to wizard_path(:basic_info), alert: "Please fill all basic information"
+        return
+      end
+    elsif @current_step == "aditional_info"
+      if !@profile.finish_personal_info?
+        redirect_to wizard_path(:personal_info), alert: "Please fill all personal information"
+        return
+      end
+    end
     render_wizard
   end
   

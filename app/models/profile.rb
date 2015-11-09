@@ -21,7 +21,8 @@ class Profile < ActiveRecord::Base
   def finish_basic_info?
     if  self.name.blank? || self.age.blank? || self.dob.blank? ||
         self.country.blank? || self.state.blank? || self.city.blank? ||
-        self.gender.blank? || self.status.blank?
+        self.gender.blank? || self.status.blank? || self.religion.blank? ||
+        self.language.blank? || self.tandc.blank?
       false
     else
       true
@@ -29,9 +30,14 @@ class Profile < ActiveRecord::Base
   end
 
   def finish_personal_info?
-    if  self.religion.blank? || self.language.blank? || self.ethnicity.blank? ||
-        self.occupation.blank? || self.income.blank? || self.household.blank? ||
-        self.height.blank? || self.weight.blank? || self.bodytype.blank?
+    if  self.ethnicity.blank? || self.occupation.blank? ||
+        self.income.blank? || self.household.blank? ||
+        self.height.blank? || self.weight.blank? ||
+        self.bodytype.blank? || self.smoker.blank? ||
+        self.drinker.blank? || self.children.blank? ||
+        self.wantkids.blank? || self.graduate_degree.blank? ||
+        self.bachelors_degree.blank? || self.vocational.blank? ||
+        self.high_school.blank?
       false
     else
       true
@@ -39,6 +45,12 @@ class Profile < ActiveRecord::Base
   end
 
   def finish_additional_info?
+    if  self.selfbio.blank? || self.ideal.blank? ||
+        self.profile_heading.blank?
+      false
+    else
+      true
+    end
   end
 
   def finished_profile?
