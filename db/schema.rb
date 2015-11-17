@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107144823) do
+ActiveRecord::Schema.define(version: 20151107150333) do
 
   create_table "courtship_preferences", force: :cascade do |t|
     t.string   "name"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 20151107144823) do
 
   add_index "profile_courtship_preferences", ["courtship_preference_id"], name: "index_profile_courtship_preferences_on_courtship_preference_id"
   add_index "profile_courtship_preferences", ["profile_id"], name: "index_profile_courtship_preferences_on_profile_id"
+
+  create_table "profile_photos", force: :cascade do |t|
+    t.integer  "profile_id"
+    t.string   "photo_uid"
+    t.string   "photo_name"
+    t.string   "photo_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "profile_photos", ["profile_id"], name: "index_profile_photos_on_profile_id"
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "age"

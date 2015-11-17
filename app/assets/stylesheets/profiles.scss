@@ -52,23 +52,7 @@ $url_0: url(http://subtlepatterns.com/patterns/geometry2.png);
     float: right;
   }
   .finalizeProfile {
-    text-align: center;
-    margin-top: 10%;
 
-    .glyphicon-ok {
-      font-size: 70px;
-      color: green;
-      padding: 15px;
-      background: $white;
-      border-radius: 50%;
-      border: 1px solid green;
-    }
-    .glyphicon-play-circle {
-      font-size: 70px;
-      color: $color_mountain_mist_approx;
-      padding: 15px;
-      background: $white;
-    }
   }
   .tab-content {
     padding: 0 15px;
@@ -266,9 +250,7 @@ $url_0: url(http://subtlepatterns.com/patterns/geometry2.png);
       display: inline-block;
     }
     .finalizeProfile {
-      .glyphicon-ok {
-        font-size: 40px;
-      }
+      
     }
     .tab-content .head {
       font-size: 15px;

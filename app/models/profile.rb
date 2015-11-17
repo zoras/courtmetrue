@@ -1,14 +1,11 @@
 class Profile < ActiveRecord::Base
   belongs_to :user
 
+  has_many :profile_photos
   has_many :profile_courtship_preferences
   has_many :courtship_preferences, through: :profile_courtship_preferences
-  # accepts_nested_attributes_for :profile_courtship_preferences
 
-  # validates :name, :age, :dob, :country, :state, :city, :gender, :status,
-              # :religion, :language, :ethnicity, :occupation, :income, :household,
-              # :height, :weight, :bodytype, :expectations, :smoker, :drinker, :children,
-              # :wantkids, :selfbio, :ideal, :tandc, presence: true
+  accepts_nested_attributes_for :profile_photos
 
   def male?
     self.gender == "Male"
@@ -45,8 +42,8 @@ class Profile < ActiveRecord::Base
   end
 
   def finish_additional_info?
-    if  self.selfbio.blank? || self.ideal.blank? ||
-        self.profile_heading.blank?
+    if  self.profile_heading.blank? || self.selfbio.blank? ||
+        self.ideal.blank? || self.expectations.blank?
       false
     else
       true
