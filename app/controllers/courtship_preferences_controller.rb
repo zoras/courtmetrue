@@ -28,7 +28,7 @@ class CourtshipPreferencesController < ApplicationController
 
     respond_to do |format|
       if @courtship_preference.save
-        format.html { redirect_to @courtship_preference, notice: 'Courtship preference was successfully created.' }
+        format.html { redirect_to courtship_preferences_path, notice: 'Courtship preference was successfully created.' }
         format.json { render :show, status: :created, location: @courtship_preference }
       else
         format.html { render :new }
