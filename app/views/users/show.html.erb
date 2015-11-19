@@ -1,3 +1,4 @@
-<h3>User</h3>
-<p>Name: <%= @user.name if @user.name %></p>
+<h3>Profile</h3>
 <p>Email: <%= @user.email if @user.email %></p>
+<p>Name: <%= @user.profile.name if @user.profile.name %></p>
+<p>Profile Heading: <%= @user.profile.profile_heading if @user.profile.profile_heading %></p>
