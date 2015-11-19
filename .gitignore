@@ -10,6 +10,9 @@
 # http://github.com/RailsApps/rails-composer/issues
 #----------------------------------------------------------------------------
 
+# don't commit uploaded photos
+/public/system/dragonfly/*
+
 # bundler state
 /.bundle
 /vendor/bundle/

@@ -2,3 +2,12 @@
 <p>Email: <%= @user.email if @user.email %></p>
 <p>Name: <%= @user.profile.name if @user.profile.name %></p>
 <p>Profile Heading: <%= @user.profile.profile_heading if @user.profile.profile_heading %></p>
+<div class="container">
+  <div class="row">
+    <% @user.profile.profile_photos.each do |dd| %>
+    <div class="col-md-3 col-sm-4 col-xs-6">
+      <%= image_tag dd.photo.thumb('400x200#').url, class: "img-responsive" if dd.photo_stored? %>
+    </div>
+    <% end %>
+  </div>
+</div>
