@@ -42,12 +42,15 @@ class Profile < ActiveRecord::Base
   end
 
   def finish_additional_info?
-    if  self.profile_heading.blank? || self.selfbio.blank? ||
-        self.ideal.blank? || self.expectations.blank?
-      false
-    else
-      true
+    completed = false
+    unless self.profile_heading.blank? || self.selfbio.blank? ||
+        self.ideal.blank?
+      completed = true
+      if self.expectations.blank?
+        completed = false if self.male?
+      end
     end
+    completed
   end
 
   def finished_profile?
