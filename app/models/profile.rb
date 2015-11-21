@@ -32,9 +32,7 @@ class Profile < ActiveRecord::Base
         self.height.blank? || self.weight.blank? ||
         self.bodytype.blank? || self.smoker.blank? ||
         self.drinker.blank? || self.children.blank? ||
-        self.wantkids.blank? || self.graduate_degree.blank? ||
-        self.bachelors_degree.blank? || self.vocational.blank? ||
-        self.high_school.blank?
+        self.wantkids.blank? || self.education.blank?
       false
     else
       true

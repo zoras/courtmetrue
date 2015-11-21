@@ -15,10 +15,8 @@
 	          	<fieldset>
 	              <div class="tab-pane fade in active" id="home">
 	                <%= f.input :ethnicity, collection: [:Asian, :Caucasian, :Hispanic, :Arabs, :Persians, :Other] %>
-	                <%= f.input :graduate_degree, label: 'Graduate Degree' %>
-	                <%= f.input :bachelors_degree, label: 'Bachelors Degree' %>
-	                <%= f.input :vocational %>
-	                <%= f.input :high_school, label: 'High School' %>
+	                <%= f.input :education, label: 'Education', collection: [:"Graduates", :"Bachelors Degree", :"Vocational", :"High School"] %>
+	               
 	                <%= f.input :occupation %>
 	                <%= f.input :income, label: 'Annual Income' %>
 	                <%= f.input :household, label: 'Living Situation' , collection: [:Alone, :Housemates, :family] %>

@@ -57,8 +57,7 @@ class ProfilesController < ApplicationController
                                       :religion, :language, :ethnicity, :occupation, :income, :household,
                                       :height, :weight, :bodytype, :smoker, :drinker, :children, :wantkids,
                                       :selfbio, :ideal, :tandc,
-                                      :gender, :status, :graduate_degree, :bachelors_degree,
-                                      :vocational, :high_school, :profile_heading,
+                                      :gender, :status, :education, :profile_heading,
                                       :expectations, courtship_preference_ids: [],
                                       profile_photos_attributes: [:id, :profile_id, :photo, :photo_url])
     end
