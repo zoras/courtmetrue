@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107150333) do
+ActiveRecord::Schema.define(version: 20151121042332) do
 
   create_table "courtship_preferences", force: :cascade do |t|
     t.string   "name"
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 20151107150333) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "age"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "name"
     t.date     "dob"
     t.string   "country"
@@ -69,10 +69,6 @@ ActiveRecord::Schema.define(version: 20151107150333) do
     t.boolean  "tandc"
     t.integer  "user_id"
     t.text     "expectations"
-    t.string   "graduate_degree"
-    t.string   "bachelors_degree"
-    t.string   "vocational"
-    t.string   "high_school"
     t.string   "profile_heading"
   end
 
