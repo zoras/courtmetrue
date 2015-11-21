@@ -5,7 +5,9 @@ class ProfilesController < ApplicationController
   before_action :get_user
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
-  
+  def finish_wizard_path
+    wizard_path(:profile_photos)
+  end
 
   def show
     @current_step = params[:id]
@@ -35,7 +37,7 @@ class ProfilesController < ApplicationController
     end
     render_wizard
   end
-  
+
   def update
     @profile.update(profile_params)
     render_wizard @profile
@@ -60,5 +62,5 @@ class ProfilesController < ApplicationController
                                       :expectations, courtship_preference_ids: [],
                                       profile_photos_attributes: [:id, :profile_id, :photo, :photo_url])
     end
-    
+
 end
