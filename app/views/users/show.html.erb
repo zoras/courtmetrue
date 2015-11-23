@@ -6,7 +6,7 @@
   <div class="row">
     <% @user.profile.profile_photos.each do |dd| %>
     <div class="col-md-3 col-sm-4 col-xs-6">
-      <%= image_tag dd.photo.thumb('400x200#').url, class: "img-responsive" if dd.photo_stored? %>
+      <%= image_tag dd.photo(:thumb), class: "img-responsive" %>
     </div>
     <% end %>
   </div>

@@ -14,20 +14,24 @@
                                                   } do |f| %>
               <fieldset>
                 <div class="tab-pane fade in active" id="home">
-                  <div class="container">
+                  <div class="">
                     <div class="row">
-                      <% @profile.profile_photos.each do |dd| %>
-                      <div class="col-md-3 col-sm-4 col-xs-6">
-                        <%= image_tag dd.photo.thumb('400x200#').url, class: "img-responsive" if dd.photo_stored? %>
-                      </div>
+                      <%= f.fields_for :profile_photos do |p| %>
+                        <div class="col-xs-6 col-md-3 thumb">
+                          <span class="thumbnail">
+                            <%= image_tag p.object.photo(:thumb), class: "img-responsive" %>
+                            <%= p.input :photo, :multiple => true, as: :file, label: false %>
+                            <%= p.check_box :_destroy, class: "removePhoto" %>
+                          </span>
+                        </div>
                       <% end %>
                     </div>
                   </div>
-                  <%= f.fields_for :profile_photos do |p| %>
-                    <%= p.input :photo, :multiple => true, as: :file %>
-                  <% end %>
                   <button type="submit" href="#profile" name="home_form" class="bbtn">
                     Upload Photo <span class="glyphicon glyphicon-upload"></span>
+                  </button>
+                  <button type="submit" href="#profile" name="home_form" class="bbtn">
+                    Delete checked photos <span class="glyphicon glyphicon-minus"></span>
                   </button>
                   <br>
                   <%= link_to previous_wizard_path, class: "btn-submit btn btn-success btn-outline-rounded green" do %>

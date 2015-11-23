@@ -59,7 +59,7 @@ class ProfilesController < ApplicationController
                                       :selfbio, :ideal, :tandc,
                                       :gender, :status, :education, :profile_heading,
                                       :expectations, courtship_preference_ids: [],
-                                      profile_photos_attributes: [:id, :profile_id, :photo, :photo_url])
+                                      profile_photos_attributes: [:id, :profile_id, :photo, :_destroy])
     end
 
 end
