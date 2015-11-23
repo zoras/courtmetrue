@@ -74,6 +74,9 @@ $url_0: url(http://subtlepatterns.com/patterns/geometry2.png);
     top: 50%;
     z-index: 1;
   }
+  .file {
+    margin: 10px 0 0 2px;
+  }
   li {
     &.active {
       &:after {

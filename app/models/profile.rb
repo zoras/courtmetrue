@@ -5,7 +5,7 @@ class Profile < ActiveRecord::Base
   has_many :profile_courtship_preferences
   has_many :courtship_preferences, through: :profile_courtship_preferences
 
-  accepts_nested_attributes_for :profile_photos
+  accepts_nested_attributes_for :profile_photos, :allow_destroy => true, :reject_if => :all_blank
 
   def male?
     self.gender == "Male"

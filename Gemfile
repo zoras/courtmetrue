@@ -44,4 +44,4 @@ group :test do
   gem 'selenium-webdriver'
 end
 gem 'wicked'
-gem 'dragonfly'
+gem 'paperclip'
