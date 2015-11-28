@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20151121184709) do
     t.datetime "photo_updated_at"
   end
 
+  add_index "profile_photos", ["profile_id"], name: "index_profile_photos_on_profile_id"
+
   create_table "profiles", force: :cascade do |t|
     t.integer  "age"
     t.datetime "created_at",      null: false
