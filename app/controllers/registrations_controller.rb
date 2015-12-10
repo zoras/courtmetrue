@@ -5,8 +5,4 @@ class RegistrationsController < Devise::RegistrationsController
     profile_path(:basic_info)
   end
 
-  def after_sign_in_path_for(resource)
-    root_path
-  end
-
 end
