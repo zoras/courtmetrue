@@ -1,13 +1,94 @@
-<h3>Profile</h3>
-<p>Email: <%= @user.email if @user.email %></p>
-<p>Name: <%= @user.profile.name if @user.profile.name %></p>
-<p>Profile Heading: <%= @user.profile.profile_heading if @user.profile.profile_heading %></p>
+<!-- Page Content -->
 <div class="container">
-  <div class="row">
-    <% @user.profile.profile_photos.each do |dd| %>
-    <div class="col-md-3 col-sm-4 col-xs-6">
-      <%= image_tag dd.photo(:thumb), class: "img-responsive" %>
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+         <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#ideal" aria-controls="ideal" role="tab" data-toggle="tab">Ideal Partners</a></li>
+            <li role="presentation"><a href="#viewed" aria-controls="viewed" role="tab" data-toggle="tab">Who Viewed Me</a></li>
+            <li role="presentation"><a href="#favorited" aria-controls="favorited" role="tab" data-toggle="tab">Who Favorited Me</a></li>
+          </ul>
+        </div>
     </div>
-    <% end %>
+    <!-- /.row -->
+
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="ideal">
+      <div class="row">
+        <div class="col-md-3 portfolio-item">
+            <a href="#">
+                <img src="http://lorempixel.com/150/125/people/10" alt="">
+            </a>
+            <div class="caption">
+                <p>
+                  Amira
+                  <br/>
+                  Bali
+                </p>
+            </div>
+        </div>
+        <div class="col-md-3 portfolio-item">
+        </div>
+        <div class="col-md-3 portfolio-item">
+        </div>
+        <div class="col-md-3 portfolio-item">
+        </div>
+      </div>
+      <!-- /.row -->
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="viewed">
+      <div class="row">
+          <div class="col-md-3 portfolio-item">
+              <a href="#">
+                  <img src="http://lorempixel.com/150/125/people/9" alt="">
+              </a>
+              <div class="caption">
+                  <p>
+                    Samuel
+                    <br/>
+                    Manila
+                  </p>
+              </div>
+          </div>
+          <div class="col-md-3 portfolio-item">
+          </div>
+          <div class="col-md-3 portfolio-item">
+          </div>
+          <div class="col-md-3 portfolio-item">
+          </div>
+      </div>
+      <!-- /.row -->
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="favorited">
+      <div class="row">
+        <div class="row">
+          <div class="col-md-3 portfolio-item">
+              <a href="#">
+                  <img src="http://lorempixel.com/150/125/people/8" alt="">
+              </a>
+              <div class="caption">
+                  <p>
+                    Daniel
+                    <br/>
+                    Bangkok
+                  </p>
+              </div>
+          </div>
+          <div class="col-md-3 portfolio-item">
+          </div>
+          <div class="col-md-3 portfolio-item">
+          </div>
+          <div class="col-md-3 portfolio-item">
+          </div>
+        </div>
+      <!-- /.row -->
+    </div>
+
   </div>
+
 </div>
+<!-- /.container -->
