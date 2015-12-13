@@ -14,7 +14,11 @@
       <% if params[:controller] == "profiles" %>
         <%= render 'layouts/nav_links_for_profile' %>
       <% else  %>
-        <%= render 'layouts/navigation_links' %>
+        <% if (params[:controller] == "users") && (params[:action] == "show") %>
+          <%= render 'layouts/nav_links_for_pictures_page' %>
+        <% else  %>
+          <%= render 'layouts/navigation_links' %>
+        <% end %>
       <% end %>
     </div>
   </div>
