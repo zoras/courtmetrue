@@ -1,14 +1,14 @@
 <%# add navigation links to this file %>
 <ul class="nav navbar-nav navbar-left">
-    <li>
-        <%= link_to 'Members', user_path(current_user) %>
-    </li>
-    <li>
-        <%= link_to 'Search', root_path %>
-    </li>
-    <li>
-        <%= link_to 'Messages', root_path %>
-    </li>
+  <li>
+      <%= link_to "Who's Online", user_path(current_user) %>
+  </li>
+  <li>
+      <%= link_to 'Messages', root_path %>
+  </li>
+  <li>
+      <%= link_to 'Interests', user_path(current_user) %>
+  </li>
 </ul>
 <ul class="nav navbar-nav navbar-right">
     <% if user_signed_in? %>
