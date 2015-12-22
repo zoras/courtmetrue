@@ -20,7 +20,11 @@
       </div>
     </main>
     <footer class="text-center">
-      <%= render 'layouts/footer' %>
+      <% if user_signed_in? %>
+        <%= render 'layouts/footer_sign_in' %>
+      <% else %>
+        <%= render 'layouts/footer' %>
+      <% end %>
     </footer>
   </body>
 </html>
