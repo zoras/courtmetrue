@@ -17,7 +17,9 @@ class ProfilesController < ApplicationController
       @profile.save
     end
 
-    @profile.profile_photos.new
+    unless !@profile.has_uploaded_5_pics?
+      @profile.profile_photos.new
+    end
 
     if @current_step == "personal_info"
       if !@profile.finish_basic_info?
@@ -39,8 +41,13 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @profile.update(profile_params)
-    render_wizard @profile
+    unless @profile.has_uploaded_5_pics?
+      render_wizard @profile
+      flash[:alert] = "You can not upload more than 5 photos"
+    else
+      @profile.update(profile_params)
+      render_wizard @profile
+    end
   end
 
   private
@@ -59,7 +66,7 @@ class ProfilesController < ApplicationController
                                       :selfbio, :ideal, :tandc,
                                       :gender, :status, :education, :profile_heading,
                                       :expectations, courtship_preference_ids: [],
-                                      profile_photos_attributes: [:id, :profile_id, :photo, :_destroy])
+                                      profile_photos_attributes: [:id, :profile_id, :photo, :_destroy, :is_profile_pic])
     end
 
 end

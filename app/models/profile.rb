@@ -51,6 +51,14 @@ class Profile < ActiveRecord::Base
     completed
   end
 
+  def has_uploaded_5_pics?
+    self.profile_photos.count < 6
+  end
+
+  def first_photo?
+    self.profile_photos.count == 0
+  end
+
   def finished_profile?
     return finish_basic_info? && finish_personal_info? && finish_additional_info? ? true : false
   end

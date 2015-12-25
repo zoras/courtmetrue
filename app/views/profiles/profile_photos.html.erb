@@ -17,10 +17,20 @@
                   <div class="">
                     <div class="row">
                       <%= f.fields_for :profile_photos do |p| %>
+                        <%= p.hidden_field :is_profile_pic, value: true if @profile.first_photo? %>
                         <div class="col-xs-6 col-md-3 thumb">
                           <span class="thumbnail">
-                            <%= image_tag p.object.photo(:thumb), class: "img-responsive" %>
-                            <%= p.input :photo, :multiple => true, as: :file, label: false %>
+                            <img src="/assets/set-as-profile-pic-icon.png" class="currentProfilePic" id="currentProfilePic-<%= p.object.id %>" style="display: <%= p.object.is_profile_pic? ? 'block' : 'none' %>" />
+                            <% if p.object.photo.blank? %>
+                              <%= image_tag p.object.photo(:thumb), class: "img-responsive" %>
+                            <% else %>
+                              <%= link_to (image_tag p.object.photo(:thumb), class: "img-responsive", title: "Set as profile picture"), set_as_profile_picture_profile_photo_path(p.object.id), :class => 'setAsProfilePicture', remote: true %>
+                            <% end %>
+                            <label class="add-photo-btn"> Select Picture
+                              <span>
+                                <%= p.input :photo, :multiple => true, as: :file, label: false %>
+                              </span>
+                            </label>
                             <%= p.check_box :_destroy, class: "removePhoto" %>
                           </span>
                         </div>

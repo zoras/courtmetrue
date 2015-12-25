@@ -48,6 +48,51 @@ $url_0: url(http://subtlepatterns.com/patterns/geometry2.png);
       background-size: 30%;
     }
   }
+  form input[type="file"] {
+    z-index: 999;
+    line-height: 0;
+    font-size: 50px;
+    position: absolute;
+    opacity: 0;
+    filter: alpha(opacity = 0);
+    cursor: pointer;
+    _cursor: hand;
+    margin: 0;
+    padding: 0;
+    left: 0;
+  }
+  .add-photo-btn{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+    background-color: #337AB7;
+    color: #fff;
+    display: block;
+    width: 95.5%;
+    height: 30px;
+    font-size: 15px;
+    line-height: 30px;
+    float: left;
+    margin: 5px 5px 0 4px;
+  }
+  .setAsProfilePicture {
+    float: right;
+    margin-right: 5px;
+    &:hover {
+      background: #fff;
+      color: #000;
+    }  
+  }
+  .currentProfilePic {
+    width: 30px;
+    position: absolute;
+    left: 23px;
+    background: #ddd;
+  }
+  .removePhoto {
+    margin-left: 5px;
+  }
   .btnNext {
     float: right;
   }
