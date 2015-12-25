@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20151225081033) do
     t.boolean  "is_profile_pic"
   end
 
+  add_index "profile_photos", ["profile_id"], name: "index_profile_photos_on_profile_id"
+
   create_table "profiles", force: :cascade do |t|
     t.integer  "age"
     t.datetime "created_at",      null: false
