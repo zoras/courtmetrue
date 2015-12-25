@@ -82,7 +82,7 @@ $url_0: url(http://subtlepatterns.com/patterns/geometry2.png);
     &:hover {
       background: #fff;
       color: #000;
-    }  
+    }
   }
   .currentProfilePic {
     width: 30px;
@@ -92,6 +92,22 @@ $url_0: url(http://subtlepatterns.com/patterns/geometry2.png);
   }
   .removePhoto {
     margin-left: 5px;
+  }
+  .clear {
+    clear: both;
+  }
+  .tbl-attr {
+    color: $color_fuscous_gray_approx;
+  }
+  .profile-pic {
+    float: left;
+    margin-right: 15px;
+    margin-top: 15px;
+  }
+  .textright {
+    width: 100%;
+    display: block;
+    text-align: right;
   }
   .btnNext {
     float: right;
@@ -298,7 +314,7 @@ $url_0: url(http://subtlepatterns.com/patterns/geometry2.png);
       display: inline-block;
     }
     .finalizeProfile {
-      
+
     }
     .tab-content .head {
       font-size: 15px;
