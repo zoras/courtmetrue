@@ -62,4 +62,12 @@ class Profile < ActiveRecord::Base
   def finished_profile?
     return finish_basic_info? && finish_personal_info? && finish_additional_info? ? true : false
   end
+
+  def profile_pic
+    self.profile_photos.first.try(:photo).try(:url, :thumb)
+  end
+
+  def address
+    "#{city} #{country}"
+  end
 end
