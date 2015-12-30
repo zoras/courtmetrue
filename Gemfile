@@ -21,7 +21,6 @@ gem 'high_voltage'
 gem 'simple_form'
 gem 'upmin-admin'
 gem 'thread_safe'
-gem 'slim-rails'
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'

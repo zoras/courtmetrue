@@ -42,8 +42,7 @@ class ProfilesController < ApplicationController
 
   def myprofile
     if user_signed_in?
-      @profile = @user.profile
-      @active_users = User.includes(:profile,:profile_photos).recent_active.except_user(@user.id)
+      @photos = @user.profile.profile_photos
     else 
       redirect_to root_path, alert: "You need to sign in first"
     end
